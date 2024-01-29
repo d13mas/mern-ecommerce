@@ -6,15 +6,15 @@ const port = process.env.PORT || 5001; // fallback only if the variable does not
 
 const app = express();
 
-app.get('/', (req, res) => {
+app.get('/api', (req, res) => {
     res.send('API is running...');
 });
 
-app.get('/products', (req, res) => {
+app.get('/api/products', (req, res) => {
     res.json(products);
 });
 
-app.get('/products/:id', (req, res) => {
+app.get('/api/products/:id', (req, res) => {
     const product = products.find((p) => p._id === req.params.id);
     res.json(product);
 });
